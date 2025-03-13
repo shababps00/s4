@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Blood Donation Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            color: #d32f2f;
+            font-size: 20px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        .contact-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #d32f2f;
+        }
+
+        .contact-container p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .contact-container .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-container .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .contact-container .contact-info i {
+            margin-right: 10px;
+            color: #d32f2f;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #f1f1f1;
+                padding: 10px;
+                align-items: flex-start;
+            }
+
+            header nav a {
+                display: block;
+                margin: 5px 0;
+                width: 90%;
+                text-align: left;
+            }
+
+            .mobile-nav-button {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #333;
+            }
+        }
+
+        .mobile-nav-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Blood Donation Center</div>
+        <button class="mobile-nav-button"><i class="fas fa-bars"></i></button>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="donate.html"><i class="fas fa-heartbeat"></i> Donate</a>
+            <a href="request.html"><i class="fas fa-hands-helping"></i> Request</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="contact-container">
+        <h2>Contact Us</h2>
+        <p>We're here to help! If you have any questions, concerns, or feedback, please don't hesitate to reach out to us. We value your input and are committed to providing the best possible support.</p>
+
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> 123 Blood Donation Street, City, State, ZIP</p>
+            <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> info@blooddonationcenter.com</p>
+            <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
+        </div>
+    </section>
+
+    <script>
+        // Mobile navigation toggle
+        document.querySelector('.mobile-nav-button').addEventListener('click', function() {
+            const nav = document.querySelector('header nav');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

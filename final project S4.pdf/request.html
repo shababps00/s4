@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REQUEST Blood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            color: #d32f2f;
+            font-size: 20px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #d32f2f;
+            color: white;
+        }
+
+        .request-form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .request-form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #d32f2f;
+        }
+
+        .request-form-container label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .request-form-container input[type="text"],
+        .request-form-container input[type="email"],
+        request-form-container input[type="tel"],
+        request-form-container select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .request-form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .request-form-container button:hover {
+            background-color: #b71c1c;
+        }
+
+        .confirmation-message {
+            text-align: center;
+            margin-top: 20px;
+            color: #28a745;
+            display: none;
+        }
+
+        .success-message {
+            text-align: center;
+            margin-top: 10px;
+            color: green;
+            display: none;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #f1f1f1;
+                padding: 10px;
+                align-items: flex-start;
+            }
+
+            header nav a {
+                display: block;
+                margin: 5px 0;
+                width: 90%;
+                text-align: left;
+            }
+
+            .mobile-nav-button {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #333;
+            }
+        }
+
+        .mobile-nav-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Blood Donation Center</div>
+        <button class="mobile-nav-button"><i class="fas fa-bars"></i></button>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="donate.html"><i class="fas fa-heartbeat"></i> Donate</a>
+            <a href="request.html"><i class="fas fa-hands-helping"></i> Request</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="request-form-container">
+        <h2>Request Blood</h2>
+        <form id="requestForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="number">PHONE NUMBERS:</label>
+            <input type="tel" id="number" name="number" required>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="bloodType">Blood Type:</label>
+            <select id="bloodType" name="bloodType" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <label for="location">Requested Location:</label>
+            <input type="text" id="location" name="location" required>
+            <button type="submit">Request Blood</button>
+        </form>
+        <div class="confirmation-message" id="requestConfirmationMessage">Your request has been submitted!</div>
+        <div class="success-message" id="requestSuccessMessage" style="display: none;">Request successful!</div>
+    </section>
+
+    <script src="request.js"></script>
+</body>
+</html>
